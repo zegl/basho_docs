@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{{/*TODO(Drew): Find out if we need to do this IE-safety shit anymore. */}}
+{{ `<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"></html><![endif]-->` | safeHTML }}
+{{ `<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"></html><![endif]-->` | safeHTML }}
+{{ `<!--[if IE 8]><html class="no-js lt-ie9" lang="en"></html><![endif]-->` | safeHTML }}
+{{ `<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->` | safeHTML }}
+
+<!-- Site-wide and Page-wide Variables
+     ---------------------------------
+  We pull in "common_variables.html" to define a whole bunch of common variables
+  in the `.Scratch` object, and selectively extract the ones we want to use
+  below.
+
+{{ partial "common_variables.html" . }}
+
+{{ $project             := .Scratch.Get "project" }}
+{{ $version             := .Scratch.Get "version" }}
+{{ $project_path        := .Scratch.Get "project_path" }}
+{{ $is_latest           := .Scratch.Get "is_latest" }}
+{{ $is_lts              := .Scratch.Get "is_lts" }}
+{{ $toc                 := .Scratch.Get "toc"}}
+{{ $commercial_offering := .Scratch.Get "commercial_offering"}}
+{{ $has_supertext := isset .Params "title_supertext" }}
+-->
+
+{{ partial "head.html" . }}
+
+<body class="{{$project}} {{$version}} {{if $is_latest}}latest{{end}} {{if $is_lts}}lts{{end}}">
+
+  {{ partial "google_tag_manager.html" . }}
+
+  {{ $menu_title := (printf "%s-%s" .Params.project .Params.project_version) }}
+  {{ partial "navigation_sidebar.html" (dict "context" . "menu_title" $menu_title) }}
+
+  <!--TODO: Should this be moved to align with/be part of scripts.html? -->
+  {{ partial "search.html" . }}
+
+  <div role="main">
+
+    {{ partial "header.html" . }}
+
+    <article class="mainarticle">
+
+      {{ partial "version-ddown.html" . }}
+
+      <header>
+        {{ if $has_supertext }}<h1 class="title_supertext">{{ .Params.title_supertext }}</h1>{{ end }}
+        <h1>{{ .Title }}</h1>
+      </header>
+
+      {{ if $commercial_offering }}
+      <div class="enterprise">
+        This document applies only to Riak Enterprise, Basho's <a href="http://info.basho.com/Wiki_Riak_Enterprise_Request.html">commercial offering</a>.
+      </div>
+      {{ end }}
+
+      {{ if $toc }}
+      <nav id="toc">
+        <h2 class="title">Contents</h2>
+        <div id="toc-wrapper">
+          <ol id="toc-items"></ol>
+        </div>
+      </nav>
+      {{ end }}
+
+      {{ .Content }}
+
+      <div class="clear"></div>
+
+    </article>
+
+    {{ partial "footer.html" . }}
+
+  </div>
+
+  {{ partial "scripts.html" . }}
+
+</body>
+</html>
