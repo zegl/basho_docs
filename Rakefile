@@ -10,8 +10,8 @@
 #TODO<drew.pirrone.brusse@gmail>: Make sure the above description is correct and
 # complete.
 
-require './libs/basho_rake_deploy'
-require './libs/basho_downloads_gen'
+require_relative 'rake_libs/s3_deploy'
+require_relative 'rake_libs/gen_download_yaml.rb'
 
 $css_source = "./dynamic/css"
 $css_dest   = "./static/css"
