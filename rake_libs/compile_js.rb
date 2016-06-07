@@ -39,6 +39,8 @@ def compile_js(debug: false)
       [src, dst]
     end
 
+  src_dst_list = [["sandbox.js", "#{$js_dest}/sandbox.js"]]
+
   for src, dst in src_dst_list
     File.open(dst, 'w') { |file| file.write env[src].to_s }
     log_write(dst)
