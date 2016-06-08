@@ -16,7 +16,8 @@ def compile_css(debug: false)
     :full_exception => debug ? true      : false,
   }
 
-  Dir.glob("#{$css_source}/*.scss").each do |scss_file_path|
+  # Dir.glob("#{$css_source}/*.scss").each do |scss_file_path|
+  Dir.glob("#{$css_source}/sandbox.scss").each do |scss_file_path|
     scss_file_name   = File.basename(scss_file_path)
     output_file_name = scss_file_name.gsub(/\.scss$/, ".css")
     output_file_path = "#{$css_dest}/#{output_file_name}"
