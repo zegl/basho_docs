@@ -6,7 +6,7 @@ def compile_css(debug: false)
   require 'sass'
   require 'autoprefixer-rails'
 
-  options = {
+  sass_options = {
     :syntax         => :scss,
     :cache          => true,
     :cache_location => $cache_dir,
@@ -15,6 +15,22 @@ def compile_css(debug: false)
     :line_comments  => debug ? true      : false,
     :full_exception => debug ? true      : false,
   }
+
+  autoprefixer_browsers = [
+    # Piggyback off of Bootstrap's Official browser support policy:
+    # http://v4-alpha.getbootstrap.com/getting-started/browsers-devices/#supported-browsers
+    # Pulled from https://github.com/twbs/bootstrap/blob/v4-dev/grunt/autoprefixer-settings.js
+    'Chrome >= 35',
+    'Firefox >= 38',
+    'Edge >= 12',
+    'Explorer >= 9',
+    'iOS >= 8',
+    'Safari >= 8',
+    'Android 2.3',
+    'Android >= 4',
+    'Opera >= 12',
+  ]
+
 
   # Dir.glob("#{$css_source}/*.scss").each do |scss_file_path|
   Dir.glob("#{$css_source}/sandbox.scss").each do |scss_file_path|
@@ -25,7 +41,7 @@ def compile_css(debug: false)
 
     # If we're running as debug, build the sourcemaps
     if debug
-      (css_str, sass_map) = Sass::Engine.for_file(scss_file_path, options)
+      (css_str, sass_map) = Sass::Engine.for_file(scss_file_path, sass_options)
                             .render_with_sourcemap("#{output_file_name}.map")
       prefixed_results = AutoprefixerRails.process(css_str, {
         :map => {
@@ -37,6 +53,7 @@ def compile_css(debug: false)
         },
         :from => scss_file_path,
         :to   => public_file_path,
+        :browsers => autoprefixer_browsers,
       })
 
       File.write(output_file_path, prefixed_results.css)
@@ -44,10 +61,11 @@ def compile_css(debug: false)
       File.write("#{output_file_path}.map", prefixed_results.map)
       log_write("#{output_file_path}.map")
     else
-      css_str = Sass::Engine.for_file(scss_file_path, options).render
+      css_str = Sass::Engine.for_file(scss_file_path, sass_options).render
       prefixed_results = AutoprefixerRails.process(css_str, {
         :from => scss_file_path,
         :to   => public_file_path,
+        :browsers => autoprefixer_browsers,
       })
 
       File.write(output_file_path, prefixed_results.css)
