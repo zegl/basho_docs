@@ -9,14 +9,15 @@ $ ->
         $(menuID).show()
         $(buttonID).attr('class', 'selected')
 
-  $('#version-ddown-button').live 'click', ->
+  $('.versions').on 'click', '#version-ddown-button', () ->
     toggleMenu('#version-ddown-button', '#version-list')
     #toggleSelected('#version-ddown-title')
     #toggleSelected('#version-ddown-arrow')
 
   # Mouse click on sub menu or account link
-  $('#version-list, #version-ddown-button').live 'mouseup', -> false
+  $('.versions').on 'mouseup', '#version-ddown-button', () -> false
+  $('.versions').on 'mouseup', '#version-list', () -> false
 
-  $(document).live 'mouseup', ->
+  $().on 'mouseup', document, () ->
     $('#version-list').hide()
     $('#version-ddown-button').attr('class', 'unselected')
