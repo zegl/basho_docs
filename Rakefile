@@ -127,9 +127,11 @@ desc      "Generate the static site into #{$hugo_dest}"
 task      :hugo => ['clean:hugo'] do sh "hugo -d #{$hugo_dest}"; end
 namespace :hugo do
 
+  ##############
+  # Hugo : Server
   #TODO<drew.pirrone.brusse@gmail>: Add in some way to specify ip/port.
   desc "Run Hugo Server"
-  task :watch do sh "hugo server"; end
+  task :server do sh "hugo server"; end
 end
 
 
