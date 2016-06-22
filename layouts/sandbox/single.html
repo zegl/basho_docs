@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
 
 <!-- Site-wide and Page-wide Variables
      ---------------------------------
@@ -9,34 +8,48 @@
 
 {{ partial "common_variables.html" . }}
 
-{{ $project             := .Scratch.Get "project" }}
-{{ $version             := .Scratch.Get "version" }}
-{{ $project_path        := .Scratch.Get "project_path" }}
-{{ $is_latest           := .Scratch.Get "is_latest" }}
-{{ $is_lts              := .Scratch.Get "is_lts" }}
-{{ $toc                 := .Scratch.Get "toc"}}
-{{ $commercial_offering := .Scratch.Get "commercial_offering"}}
+{{ $project             := .Scratch.Get "project"             }}
+{{ $project_path        := .Scratch.Get "project_path"        }}
+{{ $version             := .Scratch.Get "version"             }}
+{{ $is_latest           := .Scratch.Get "is_latest"           }}
+{{ $is_lts              := .Scratch.Get "is_lts"              }}
+{{ $toc                 := .Scratch.Get "toc"                 }}
+{{ $commercial_offering := .Scratch.Get "commercial_offering" }}
 
-{{ $has_supertext := isset .Params "title_supertext" }}
+{{ $title           := .Title                             }}
+{{ $title_supertext := .Params.title_supertext            }}
+{{ $menu_title      := (printf "%s-%s" $project $version) }}
+
+{{/*TODO: Figure out if I can be rid of this. */}}
+{{ $has_supertext   := isset .Params "title_supertext"    }}
 -->
 
-<!-- {{ partial "head.html" . }} -->
+
+
+<html class="no-js" lang="en">
+
+<!-- =========================================================================================== -->
+{{/* {{ partial "head.html" . }}                                                                */}}
+<!-- =========================================================================================== -->
 
 <head>
   <meta charset="utf-8">
 
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-  <link rel="canonical" href="{{ .Params.canonical_link }}" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="canonical" href="{{ .Params.canonical_link }}">
 
   <meta name="viewport" content="width=device-width">
-  <meta name="project" content="{{ .Params.project }}">
-  <meta name="version" content="{{ .Params.project_version }}">
+  <meta name="project" content="{{ $project }}">
+  <meta name="version" content="{{ $version }}">
 
-  <title>{{ .Title }}</title>
+  <title>{{ $title }}</title>
+
+  <script type="text/javascript" src="/js/sandbox_head.js"></script>
 
   <link href="/css/sandbox.css" media="screen" rel="stylesheet" type="text/css">
-  <link href="/css/print.css" media="print" rel="stylesheet" type="text/css">
+  <!-- <link href="/css/print.css" media="print" rel="stylesheet" type="text/css"> -->
 
+{{ safeHTML `
   <!--
     Iff JavaScript is enabled, we want to hide all pre>code blocks so we can
     avoid the pre-to-post style bounce. We do this by hiding all pre elements
@@ -45,159 +58,294 @@
     We can't use the Modernizr .js class because we want this hidden before we
     give modernizr a chance to load.
     TODO: Switch to a more robust class & better name for this functionality.
-  -->
+  -->` }}
+{{/*
   <style type="text/css"> .js_enabled pre { visibility : hidden; } </style>
   <script type="text/javascript">
     document.documentElement.className = 'js_enabled';
   </script>
+*/}}
 </head>
 
-<!-- END {{ partial "head.html" . }} -->
+<!-- =========================================================================================== -->
+{{/* END {{ partial "head.html" . }}                                                            */}}
+<!-- =========================================================================================== -->
+
+
 
 <body class="{{$project}} {{$version}} {{if $is_latest}}latest{{end}} {{if $is_lts}}lts{{end}}">
 
-  {{ partial "google_tag_manager.html" . }}
+<!-- =========================================================================================== -->
+{{/* {{ partial "google_tag_manager.html" . }}                                                  */}}
+<!-- =========================================================================================== -->
 
-  {{ $menu_title := (printf "%s-%s" .Params.project .Params.project_version) }}
-  {{ partial "navigation_sidebar.html" (dict "context" . "menu_title" $menu_title) }}
+{{/*
+  <!-- Google Tag Manager -->
+  <noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-T9C8MK" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <script>
+    (function(w,d,s,l,i) {
+        w[l]=w[l]||[];
+        w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+        j.async=true;
+        j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;
+        f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-T9C8MK');
+  </script>
+  <!-- END Google Tag Manager -->
+*/}}
 
-  <!--TODO: Should this be moved to align with/be part of scripts.html? -->
-  {{ partial "search.html" . }}
+<!-- =========================================================================================== -->
+{{/* END {{ partial "google_tag_manager.html" . }}                                              */}}
+<!-- =========================================================================================== -->
 
-  <div role="main">
 
-    <!-- {{ partial "header.html" . }} -->
-    <!-- TODO: Remane the partial to "banner.html" -->
 
-    <header class="masthead">
-      <div id="header">
-        <!-- Marketing Flag
-             ==============
-          Only displayed in full-width and on the 'latest' project version
-          TODO(Drew): Should the content be extracted to a config file somewhere?
-                        Hint: Yes.
-        -->
-        {{ if $.Scratch.Get "is_latest" }}
+<!-- =========================================================================================== -->
+{{/* {{ partial "navigation_sidebar.html" (dict "context" . "menu_title" $menu_title) }}        */}}
+<!-- =========================================================================================== -->
 
-        <!-- {{ partial "marketing_banner.html" . }} -->
-        <!-- TODO: Rename this "banner--marketing-flag" -->
+  <nav class="navigation">
 
-          <div id="marketing-banner">
-            <div id="marketing-banner-inner">
-              <a class="more" href="http://info.basho.com/Docs-Registrations_Sign-up-to-be-notified-LP.html?utm_medium=display&utm_campaign=&utm_source=display&utm_content=Basho-OSS-Download-Page&utm_term=Docs-Registrations-Page&utm_channel=Online%20Advertising"></a>
-              <div class="temp-banner-text">
-                <strong>Register</strong> to be kept up-to-date on Riak releases, education, and events
-              </div>
-            </div>
-          </div>
+    <div class="navigation__fixed-top">
 
-        <!-- END {{ partial "marketing_banner.html" . }} -->
-        {{ end }}
+      <form class="clearfix" id="searchbox_011972015458788978446:zgdcy4fa-o0" action="" role="search">
+        <div class="float-left   navigation__icon-container"><span class="icon-search"></span></div>
+        <div class="float-left   navigation__separator"></div>
+        <input class="navigation__search" type="search" name="q" placeholder="Search">
+      </form>
 
-        <div id="header-inner">
-          <div class="icon-reorder" id="nav-toggle"></div>
+    </div>
 
-          <div id="top-nav">
-            {{ if $.Scratch.Get "project_path"}}
-            <a href="/{{$.Scratch.Get "project_path"}}/{{$.Scratch.Get "version"}}/downloads/"><span class="icon-download-alt"></span>Downloads</a>
-            {{ end }}
-          </div>
 
-          <a class="responsive-toggle"></a>
-          {{/*TODO(Drew): Figure out why we have text here that's not ever going
-                          to be rendered. */}}
-          {{/*TODO(Drew): Find and render a per-project image logo here. */}}
-          <a class="logo" href="/index.html"><h1>Riak Docs</h1></a>
-          {{/*TODO(Drew): This apparently this was just never rendered? What and
-                          why? No really. Why. */}}
-          <span class="tagline">Product tutorials, how-tos, and fully-documented APIs.</span>
-          <div id="nav-menu">
-            <h2>Links</h2>
-            <ul>
-              <li><a href="http://docs.basho.com/">Docs Home</a></li>
-              <li><a href="http://basho.com/">Basho Website</a></li>
-            </ul>
-            {{/*TODO(Drew): These make the little upward bump arrow thing. That
-                            took me half an hour to figure out, so I'd like to
-                            rename them. */}}
-            <div id="nav-menu-arrow"></div>
-            <div id="nav-menu-arrow-back"></div>
-          </div>
 
-          <div class="clear"></div>
+  <!-- ========================================================================================= -->
+  {{/* {{ partial "navigation_menu.html" . }}                                                   */}}
+  <!-- ========================================================================================= -->
 
-          <div class="header-rule"></div>
-        </div>
+    <ul class="navigation__menu--depth-0">
+
+    </ul>
+
+  <!-- ========================================================================================= -->
+  {{/* END {{ partial "navigation_menu.html" . }}                                               */}}
+  <!-- ========================================================================================= -->
+
+
+
+    <ul class="navigation__fixed-bottom">
+
+      <li>
+        <a class="clearfix" href="https://github.com/basho/basho_docs" target="_blank">
+          <div class="float-left   navigation__icon"><span class="icon-github-alt"></span></div>
+          <div class="float-left   navigation__separator"></div>
+          Available on GitHub
+          <!--TODO: Can we have the text first, then the floaty stuff? Should we? -->
+        </a>
+      </li>
+
+      <li>
+        <a class="clearfix" href="/riak/latest/community/">
+          <div class="float-left   navigation__icon"><span class="icon-question-sign"></span></div>
+          <div class="float-left   navigation__separator"></div>
+          Get Help
+        </a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+<!-- =========================================================================================== -->
+{{/* END {{ partial "navigation_sidebar.html" . . . }}                                          */}}
+<!-- =========================================================================================== -->
+
+
+
+<!-- =========================================================================================== -->
+{{/* {{ partial "banner.html" . }}                                                              */}}
+<!-- =========================================================================================== -->
+
+  <header class="banner">
+
+  <!-- ========================================================================================= -->
+  {{/* {{ partial "version-selector.html" . }}                                                  */}}
+  <!-- ========================================================================================= -->
+
+    <div class="version-selector">
+
+      <header class="version-selector__title">VERSIONS</header>
+      <button class="version-selector__btn" type="button">{{ $version }}</button>
+      <div    class="version-selector__arrow"></div>
+
+      <ul class="version-selector__list" hidden>
+      </ul>
+
+    </div>
+
+  <!-- ========================================================================================= -->
+  {{/* END {{ partial "version-selector.html" . }}                                              */}}
+  <!-- ========================================================================================= -->
+
+
+    <div class="docs-logo">
+      <a href="/index.html"><img class="docs-logo__image" src="/images/layout/basho_docs_logo.png"></a>
+    </div>
+
+{{/* if $project_path */}}
+{{/* if $.Scratch.Get "project_path" */}}
+    <div class="downloads-btn">
+      <a href="/{{$project_path}}/{{$version}}/downloads/">
+        <span class="icon-download-alt"></span>
+        Downloads
+      </a>
+    </div>
+{{/* end */}}
+
+    <div class="clear"></div><!-- Find out if this is necessary -->
+
+    <div class="banner__horizontal-rule"></div>
+
+  </header>
+
+<!-- =========================================================================================== -->
+{{/* END {{ partial "banner.html" . }}                                                          */}}
+<!-- =========================================================================================== -->
+
+
+
+  <!-- ========================================================================================= -->
+  <!-- MAIN CONTENT                                                                              -->
+  <!-- ========================================================================================= -->
+
+  <article>
+
+    <header class="front-matter">
+
+      <div>
+{{ if $has_supertext }}
+{{/* if $title_supertext */}}
+        <h1 class="front-matter__title--supertext">{{ $title_supertext }}</h1>
+        <!--TODO: Move the supertext check & value into common.html -->
+{{ end }}
+        <h1 class="front-matter__title">{{ $title }}</h1>
       </div>
-    </header>
 
-    <!--  END {{ partial "header.html" . }} -->
-
-
-    <article class="mainarticle">
-
-      {{ partial "version-ddown.html" . }}
-
-      <header>
-        {{ if $has_supertext }}<h1 class="title_supertext">{{ .Params.title_supertext }}</h1>{{ end }}
-        <h1>{{ .Title }}</h1>
-      </header>
-
-      {{ if $commercial_offering }}
-      <div class="enterprise">
-        This document applies only to Riak Enterprise, Basho's <a href="http://info.basho.com/Wiki_Riak_Enterprise_Request.html">commercial offering</a>.
+{{/* if $commercial_offering */}}
+      <div class="enterprise-only-flag" role="note">
+        This document applies only to Riak Enterprise, Basho's
+        <a href="http://info.basho.com/Wiki_Riak_Enterprise_Request.html">commercial offering</a>.
       </div>
-      {{ end }}
+{{/* end */}}
 
-      {{ if $toc }}
-      <nav id="toc">
-        <h2 class="title">Contents</h2>
-        <div id="toc-wrapper">
-          <ol id="toc-items"></ol>
+{{ if $toc }}
+      <!--TODO: Look into using Hugo's ToCs instead of our own? -->
+      <nav class="table-of-contents">
+        <h2 class="table-of-contents__title">Contents</h2>
+        <!-- NB. This wrapp is significant for ToCs w/ multiple columns -->
+        <div class="table-of-contents__wrapper js-toc-wrapper">
+          <ol class="table-of-contents__items js-toc-items"></ol>
         </div>
       </nav>
-      {{ end }}
+{{ end }}
 
+    </header>
+
+
+
+    <main>
       {{ .Content }}
+    </main>
 
-      <div class="clear"></div>
 
-    </article>
 
-    <!-- {{ partial "footer.html" . }} -->
+    <div class="clear"></div><!--TODO: figure out if we can drop this/change it to be a clearfix -->
 
-    <footer>
-      <p class="center-text">
-        <a href="http://basho.com/">Basho.com</a>&nbsp;&nbsp;-&nbsp;&nbsp;<a href="http://docs.basho.com/">Docs Home</a>&nbsp;&nbsp;-&nbsp;&nbsp;<a href="http://basho.com/contact/">Contact Basho</a>
-      </p>
-      <p class="center-text">
-        This work is licensed under a
-        <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International Public License</a>
-        <br>
-        © 2011-2016&nbsp;<a href="http://www.basho.com">Basho Technologies, Inc.</a>
-      </p>
-    </footer>
+  </article>
 
-    <!-- END {{ partial "footer.html" . }} -->
+  <!-- ========================================================================================= -->
+  <!-- END MAIN CONTENT                                                                          -->
+  <!-- ========================================================================================= -->
 
-  </div>
 
-  <!-- {{ partial "scripts.html" . }} -->
 
-  <script src="/js/sandbox.js" type="text/javascript"></script>
-  <script type= "text/javascript">
+<!-- =========================================================================================== -->
+{{/* {{ partial "footer.html" . }}                                                              */}}
+<!-- =========================================================================================== -->
+
+  <footer>
+    <p class="center-text">
+      <a href="http://basho.com/">Basho.com</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      <a href="http://docs.basho.com/">Docs Home</a>
+      &nbsp;&nbsp;-&nbsp;&nbsp;
+      <a href="http://basho.com/contact/">Contact Basho</a>
+    </p>
+    <p class="center-text">
+      This work is licensed under a
+      <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">
+        Creative Commons Attribution 4.0 International Public License
+      </a>
+      <br>
+      <!--TODO: Figure out how to make the year auto-updating. I am totally going to forget
+                to update it if we don't automate that junk right now. -->
+      © 2011-2016&nbsp;<a href="http://www.basho.com">Basho Technologies, Inc.</a>
+    </p>
+  </footer>
+
+<!-- =========================================================================================== -->
+{{/* END {{ partial "footer.html" . }}                                                          */}}
+<!-- =========================================================================================== -->
+
+
+
+<!-- =========================================================================================== -->
+{{/* {{ partial "scripts.html" . }}                                                             */}}
+<!-- =========================================================================================== -->
+
+  <script type="text/javascript" src="/js/sandbox.js"></script>
+{{/*
+  <script type="text/javascript">
     // Make visible all ".js_enabled pre" blocks and load Highlight.js without any
     // language autodetection.
     // Be sure to do it in a JQuery callback, since we only want to reveal these
     // after code-tabs.js has gotten its callback in.
+    //TODO: We can better-this up. So we should. I'm also not convinced this
+    //      needs to part of JQuery.
     $(function() {
       $(".js_enabled pre").css("visibility", "visible");
       hljs.configure({languages: []});
       hljs.initHighlighting();
     });
   </script>
+*/}}
 
-  <!-- END {{ partial "scripts.html" . }} -->
+  <!-- Google Search script -->
+  <script type="text/javascript">
+    (function() {
+      var cx = '011972015458788978446:zgdcy4fa-o0';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+          '//cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+  <!-- END Google Search script -->
+
+  <!-- Google Search Pixel -->
+  <div style="width:0px;overflow:hidden;height:0px;">
+    <gcse:search></gcse:search>
+  </div>
+  <!-- END Google Search Pixel -->
+
+<!-- =========================================================================================== -->
+{{/* END {{ partial "scripts.html" . }}                                                         */}}
+<!-- =========================================================================================== -->
 
 </body>
 </html>
