@@ -19,7 +19,7 @@ canonical_link: "https://docs.basho.com/riak/kv/latest/learn/concepts/active-ant
 [cluster ops v3 mdc]: /riak/kv/2.0.5/using/cluster-operations/v3-multi-datacenter
 [concept clusters]: /riak/kv/2.0.5/learn/concepts/clusters
 [concept eventual consistency]: /riak/kv/2.0.5/learn/concepts/eventual-consistency
-[config v3 mdc]: /riak/kv/2.0.5/configuring/v3-multi-datacenter
+[config v3 mdc]: /riak/kv/2.0.5/configuring/reference/#active-anti-entropy
 [glossary read rep]: /riak/kv/2.0.5/learn/glossary/#read-repair
 [glossary vnode]: /riak/kv/2.0.5/learn/glossary/#vnode
 [Merkle tree]: http://en.wikipedia.org/wiki/Merkle_tree
