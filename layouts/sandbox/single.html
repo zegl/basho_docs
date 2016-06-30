@@ -50,9 +50,9 @@
 
 <html class="no-js" lang="en">
 
-<!-- =========================================================================================== -->
+{{/* ========================================================================================== */}}
 {{/* {{ partial "head.html" $HugoNode }}                                                        */}}
-<!-- =========================================================================================== -->
+{{/* ========================================================================================== */}}
 <!-- Variable Definitions
      ====================
 {{ $HugoNode := . }}
@@ -98,17 +98,17 @@
 */}}
 </head>
 
-<!-- =========================================================================================== -->
+{{/* ========================================================================================== */}}
 {{/* END {{ partial "head.html" $HugoNode }}                                                    */}}
-<!-- =========================================================================================== -->
+{{/* ========================================================================================== */}}
 
 
 
 <body class="{{$project}} {{$version}} {{if $is_latest}}latest{{end}} {{if $is_lts}}lts{{end}}">
 
-<!-- =========================================================================================== -->
+{{/* ========================================================================================== */}}
 {{/* {{ partial "google_tag_manager.html" $HugoNode }}                                          */}}
-<!-- =========================================================================================== -->
+{{/* ========================================================================================== */}}
 
 {{/*
   <!-- Google Tag Manager -->
@@ -128,15 +128,15 @@
   <!-- END Google Tag Manager -->
 */}}
 
-<!-- =========================================================================================== -->
+{{/* ========================================================================================== */}}
 {{/* END {{ partial "google_tag_manager.html" $HugoNode }}                                      */}}
-<!-- =========================================================================================== -->
+{{/* ========================================================================================== */}}
 
 
 
-<!-- =========================================================================================== -->
-{{/* {{ partial "navigation_sidebar.html" $HugoNode }}                                          */}}
-<!-- =========================================================================================== -->
+{{/* ========================================================================================== */}}
+{{/* {{ partial "content_navigation.html" $HugoNode }}                                          */}}
+{{/* ========================================================================================== */}}
 <!-- Variable Definitions
      ====================
 {{ $HugoNode := . }}
@@ -151,15 +151,15 @@
 {{ $menu_list  := (index $HugoNode.Site.Menus $menu_title) }} {{/* Hugo List of Menu Objects */}}
 -->
 
-  <nav class="navigation">
+  <nav class="content-nav   [bs] hidden-sm-down">
 
-    <div class="navigation__fixed-top">
+    <div class="content-nav__fixed-top">
 
       <form class="clearfix" id="searchbox_011972015458788978446:zgdcy4fa-o0" action="" role="search">
-        <div class="navigation__search-container">
-          <div class="float-left   navigation__icon-container"><span class="docs-icon--search"></span></div>
-          <div class="float-left   navigation__separator"></div>
-          <input class="navigation__search-input" type="search" name="q" placeholder="Search">
+        <div class="content-nav__search-container">
+          <div class="float-left   content-nav__icon-container"><span class="docs-icon--search"></span></div>
+          <div class="float-left   content-nav__separator"></div>
+          <input class="content-nav__search-input" type="search" name="q" placeholder="Search">
         </div>
       </form>
 
@@ -167,7 +167,7 @@
 
 
 
-    <ul class="navigation-menu--depth-0">
+    <ul class="content-nav__menu--depth-0">
 {{ range $menu_item := $menu_list }}
   <!-- Range-Specific Variable Definitions
        ===================================
@@ -181,19 +181,19 @@
   -->
       <li>
 
-        <div class="navigation-menu__item
-                    {{if $menu_has_children}}navigation-menu__item--with-toggle{{end}}
-                    {{if $menu_is_selected}} navigation-menu__item--selected{{end}}">
+        <div class="content-nav__entry
+                    {{if $menu_has_children}}content-nav__entry--with-toggle{{end}}
+                    {{if $menu_is_selected}} content-nav__entry--selected{{end}}">
           <!--TODO: See about cleaning up div vs span in these elements -->
-          <div class="float-left   navigation__icon-container"><span class="{{$menu_pre_item}}"></span>&nbsp;</div>
-          <div class="float-left   navigation__separator"></div>
+          <div class="float-left   content-nav__icon-container"><span class="{{$menu_pre_item}}"></span>&nbsp;</div>
+          <div class="float-left   content-nav__separator"></div>
   {{ if $menu_has_children }}
-          <span class="float-right   navigation-menu__toggle-buffer">&nbsp;</span>
-          <span class="float-right   navigation-menu__toggle
-                                     {{if $menu_is_open}}navigation-menu__toggle--open{{end}}"></span>
+          <span class="float-right   content-nav__toggle-buffer">&nbsp;</span>
+          <span class="float-right   content-nav__toggle
+                                     {{if $menu_is_open}}content-nav__toggle--open{{end}}"></span>
   {{ end }}
-          <a class="block overflow   navigation-menu__title
-                                     {{if $menu_has_children}}navigation-menu__title--toggle-border{{end}}"
+          <a class="block overflow   content-nav__title
+                                     {{if $menu_has_children}}content-nav__title--toggle-border{{end}}"
              href="{{$menu_url}}">
                                      <!--TODO: Try not to use this toggle-border modifier? -->
             {{$menu_name}}
@@ -202,7 +202,7 @@
 
   {{/*
   {{ if $menu_has_children }}
-    <ul class="navigation-menu--depth-0">
+    <ul class="content-nav--depth-1">
     </ul>
   {{ end                   }}
   */}}
@@ -212,12 +212,12 @@
 
 
 
-    <ul class="navigation__fixed-bottom">
+    <ul class="content-nav__fixed-bottom">
 
       <li>
         <a class="clearfix" href="https://github.com/basho/basho_docs" target="_blank">
-          <div class="float-left   navigation__icon"><span class="docs-icon--github-alt"></span></div>
-          <div class="float-left   navigation__separator"></div>
+          <div class="float-left   content-nav__icon-container"><span class="docs-icon--github-alt"></span></div>
+          <div class="float-left   content-nav__separator"></div>
           Available on GitHub
           <!--TODO: Can we have the text first, then the floaty stuff? Should we? -->
         </a>
@@ -225,8 +225,8 @@
 
       <li>
         <a class="clearfix" href="/community/">
-          <div class="float-left   navigation__icon"><span class="docs-icon--question-sign"></span></div>
-          <div class="float-left   navigation__separator"></div>
+          <div class="float-left   content-nav__icon-container"><span class="docs-icon--question-sign"></span></div>
+          <div class="float-left   content-nav__separator"></div>
           Get Help
         </a>
       </li>
@@ -235,15 +235,15 @@
 
   </nav>
 
-<!-- =========================================================================================== -->
-{{/* END {{ partial "navigation_sidebar.html" $HugoNode }}                                      */}}
-<!-- =========================================================================================== -->
+{{/* ========================================================================================== */}}
+{{/* END {{ partial "content_navigation.html" $HugoNode }}                                      */}}
+{{/* ========================================================================================== */}}
 
 
 
-<!-- =========================================================================================== -->
+{{/* ========================================================================================== */}}
 {{/* {{ partial "banner.html" $HugoNode }}                                                      */}}
-<!-- =========================================================================================== -->
+{{/* ========================================================================================== */}}
 <!-- Variable Definitions
      ====================
 {{ $HugoNode := . }}
@@ -303,15 +303,15 @@ TODO: Other stuff.
 
   </header>
 
-<!-- =========================================================================================== -->
+{{/* ========================================================================================== */}}
 {{/* END {{ partial "banner.html" $HugoNode }}                                                  */}}
-<!-- =========================================================================================== -->
+{{/* ========================================================================================== */}}
 
 
 
-  <!-- ========================================================================================= -->
+  {{/* ======================================================================================== */}}
   <!-- MAIN CONTENT                                                                              -->
-  <!-- ========================================================================================= -->
+  {{/* ======================================================================================== */}}
 
   <article>
 
@@ -336,8 +336,8 @@ TODO: Other stuff.
       <nav class="table-of-contents">
         <h2 class="table-of-contents__title">Contents</h2>
         <!-- NB. This wrapp is significant for ToCs w/ multiple columns -->
-        <div class="table-of-contents__wrapper js-toc-wrapper">
-          <ol class="table-of-contents__items js-toc-items"></ol>
+        <div class="table-of-contents__wrapper">
+          <ol class="table-of-contents__items"></ol>
         </div>
       </nav>
 {{ end     }}
@@ -356,15 +356,15 @@ TODO: Other stuff.
 
   </article>
 
-  <!-- ========================================================================================= -->
+  {{/* ======================================================================================== */}}
   <!-- END MAIN CONTENT                                                                          -->
-  <!-- ========================================================================================= -->
+  {{/* ======================================================================================== */}}
 
 
 
-<!-- =========================================================================================== -->
+{{/* ========================================================================================== */}}
 {{/* {{ partial "footer.html" $HugoNode }}                                                      */}}
-<!-- =========================================================================================== -->
+{{/* ========================================================================================== */}}
 
   <footer>
     <p class="center-text">
@@ -386,15 +386,15 @@ TODO: Other stuff.
     </p>
   </footer>
 
-<!-- =========================================================================================== -->
+{{/* ========================================================================================== */}}
 {{/* END {{ partial "footer.html" $HugoNode }}                                                  */}}
-<!-- =========================================================================================== -->
+{{/* ========================================================================================== */}}
 
 
 
-<!-- =========================================================================================== -->
+{{/* ========================================================================================== */}}
 {{/* {{ partial "scripts.html" $HugoNode }}                                                     */}}
-<!-- =========================================================================================== -->
+{{/* ========================================================================================== */}}
 
   <script type="text/javascript" src="/js/sandbox.js"></script>
 {{/*
@@ -434,9 +434,9 @@ TODO: Other stuff.
   </div>
   <!-- END Google Search Pixel -->
 
-<!-- =========================================================================================== -->
+{{/* ========================================================================================== */}}
 {{/* END {{ partial "scripts.html" $HugoNode }}                                                 */}}
-<!-- =========================================================================================== -->
+{{/* ========================================================================================== */}}
 
 </body>
 </html>
