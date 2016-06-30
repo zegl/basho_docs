@@ -1,0 +1,60 @@
+/**
+ * Version Selector Drop-down Menu; Root Element
+ * NB. The width of this block will likely be set by the __title element.
+ */
+.version-selector {
+  @include when-inside('.banner') {
+    @include pos-relative-vertical-align;
+  }
+}
+
+/**
+ * Version Selector Drop-down Menu; Title
+ * 1. Poor-man's kerning. The `V` of VERSIONS looked like it was extending past
+ *    the edge of the button. Not actually the case, but it looks better now.
+ */
+.version-selector__title {
+  font-size:      0.5rem;
+  //TODO: set font to sans
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding-left: p2r(1px); /* 1 */
+}
+
+/**
+ * Version Selector Drop-down Menu; Button Element
+ * 1. Likely determined by the __title.
+ * 2. X-padding will likely be ignored, so this should be considered a min.
+ * 3. Clear the default Button styles to flatten the element.
+ */
+.version-selector__btn {
+  width: 100%; /* 1 */
+  padding: 0.2rem 0.3rem; /* 2 */
+  border-radius: 0.3rem;
+  background-color: #f99d33; //TODO: variablize
+
+  //TODO: font sans bold
+  font-size: 0.75rem;
+  color: white; //TODO: variablize
+
+  border: 0;       /* 3 */
+  @include on-event {
+    outline: none; /* 3 */
+  }
+}
+
+/**
+ * Version Selector Drop-down Menu; Downward Arrow
+ * An example of the arrowVertical mixin; downward-facing orange arrow used to
+ * indicate a drop-down menu.
+ * 1. A margin-bottom won't affect the size of the parent element, so only apply
+ *    a margin-top.
+ * 2. fill width of the parent element w/o widening the border (aka the arrow).
+ */
+.version-selector__arrow {
+  @include arrowVertical(top, bottom, p2r(6px), #f99d33); //TODO: variablize color
+  position: relative;
+  margin-top: .25rem; /* 1 */
+  margin-left:  auto; /* 2 */
+  margin-right: auto; /* 2 */
+}

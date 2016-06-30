@@ -1,0 +1,23 @@
+/**
+ * Direct link to Downloads. Shaped like a button.
+ */
+.downloads-btn {
+
+  a {
+    background-color: #f99d33; //TODO: variable
+
+    height: 100%;
+    width:  100%;
+    padding: 0.3rem 0.2rem;
+    border-radius: 0.3rem;
+
+    cursor: pointer;
+
+    color: white; //TODO: variable
+    //TODO: Font bold
+  }
+
+  @include when-inside('.banner') {
+    @include pos-relative-vertical-align;
+  }
+}
