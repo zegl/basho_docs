@@ -16,7 +16,9 @@
 //
 // Examples:
 //  To apply styles when a screen at least 'md' in width,
-//      @include wider-than(md) { ... }
+//      @include wide-from(md) { ... }
+//  To apply styles when a screen at most 'lg' in width,
+//      @include narrow-from(lg) { ... }
 //  To hide an element on 'sm' or smaller,
 //      <div class="hidden-sm-down"></div>
 //  To hide an element on 'lg' or larger,
