@@ -68,7 +68,7 @@
 /// @param {Number|List} $px-values - One or more px values
 @mixin rem($property, $px-values) {
   // Convert the root size into rem
-  $baseline-rem: $baseline-px / 1rem * 1;
+  $baseline-rem: $font-size-root / 1rem * 1;
   // Print px values first, so supported browsers can override w/ rem
   #{$property}: $px-values;
   // If there is only one (numeric) value, return the property/value line for it.
