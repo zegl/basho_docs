@@ -23,7 +23,8 @@
 //      <div class="hidden-lg-up"></div>
 
 //TODO: Consider moving to `rem`s, rather than `px`s.
-$sm-screen-min:  544px; // 34rem
+$xs-screen-min:  320px; // 20rem
+$sm-screen-min:  480px; // 30rem
 $md-screen-min:  768px; // 48rem
 $lg-screen-min:  992px; // 62rem
 $xl-screen-min: 1200px; // 75rem
@@ -62,7 +63,7 @@ $font-size-root: 16px;
 // adapting to different screen sizes, for use in media queries.
 
 $grid-breakpoints: (
-  xs: 0,
+  xs: $xs-screen-min,
   sm: $sm-screen-min,
   md: $md-screen-min,
   lg: $lg-screen-min,
@@ -75,7 +76,7 @@ $grid-breakpoints: (
 // Define the maximum width of `.container` for different screen sizes.
 
 $container-max-widths: (
-  sm: 576px, // 36rem
+  sm: 512px, // 32rem
   md: 720px, // 45rem
   lg: 940px, // 58.75rem
   xl: 1140px // 71.25rem
