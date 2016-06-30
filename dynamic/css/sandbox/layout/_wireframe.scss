@@ -1,0 +1,76 @@
+/**
+ * Basic Layouts
+ * =============
+ * This file may be a temporary. The intent is to keep it as minimal as possible
+ * while still communicating the essentials of the wireframe layout of a typical
+ * content page. Individual block layouts should be separated out into their own
+ * layout/*.scss files if they're too large to quickly parse here. When that
+ * should start happening is... yet to be determined.
+ */
+
+/**
+ * Height of the Banner element (at applicable breakpoints)
+ */
+$banner-height-sm-down: 3.5rem;
+$banner-buffer-sm-down: 0.5rem;
+$banner-height-md-up:   4.5rem;
+$banner-buffer-md-up:   1rem;
+
+$body-padding-top-sm-down: $banner-height-sm-down + $banner-buffer-sm-down;
+$body-padding-top-md-up:   $banner-height-md-up + $banner-buffer-md-up;
+
+
+/**
+ * Banner
+ * 1. Fill the width of the body. This will hopefully be the width of the
+ *    screen, but the body content might push past that, and widen this as well.
+ * 2. Because all elements are floating and vertically aligned, setting a
+ *    padding-top has the effect of pushing all contained elements down by that
+ *    amount, and a padding-bottom will similarly push content up. Neither will
+ *    affect the final size of the Banner.
+ */
+.banner {
+  position: fixed;
+  top:      0;
+  left:     0; /* 1 */
+  right:    0; /* 1 */
+  height:   $banner-height-sm-down;
+
+  padding: 0 1rem 0 1.25rem; /* 2 */
+
+  background: linear-gradient(to top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,1) 100%);
+  // This is for IE6-9. Not sure if we want ot bother w/ it.
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#CCffffff', GradientType=0 );
+
+  //TOOD: Make this better. Separate element, maybe? Box-shadow?
+  border-bottom: 1px solid #eaeaea; //TODO: Variablize color
+
+  @include wide-from(md) {
+    height: $banner-height-md-up;
+    padding: .5rem .75rem 0 .75rem; /* 2 */
+  }
+}
+
+.banner__element-wrapper,
+.banner__element-wrapper--menu-bars,
+.banner__element-wrapper--version-selector,
+.banner__element-wrapper--docs-logo,
+.banner__element-wrapper--downloads-btn, {
+  height: 100%;
+}
+
+.banner__element-wrapper--version-selector {
+  @include wide-from(md) {
+    margin-right: 2rem;
+  }
+}
+
+
+
+body {
+  padding-top: $body-padding-top-sm-down;
+
+  @include wide-from(md) {
+    padding-top: $body-padding-top-md-up;
+  }
+}
