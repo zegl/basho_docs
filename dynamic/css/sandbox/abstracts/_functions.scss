@@ -1,6 +1,12 @@
 ////
 /// Application-Wide Sass Functions
 /// ===============================
+///
+/// NB. We use Sass comments -- specifically SassDoc-style headers -- rather
+///     than the C-style block comments that persist through the SCSS -> CSS
+///     compilation because this file **should not** generate any code of its
+///     own. Any C-style comments would result in dangling comment blocks in the
+///     compiled CSS.
 ////
 
 /// Native `url(..)` function wrapper
