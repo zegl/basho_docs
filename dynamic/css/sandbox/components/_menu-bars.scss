@@ -13,7 +13,7 @@
  *TODO: Consider moving this into a mixin.
  *TODO: Consider using an icon-font or svg instead of CSS. (rounded edges for great justice?)
  */
-$bar-width:  1em;
+$bar-width:  0.8em;
 $bar-height: 0.125em;
 .menu-bars {
   width:  $bar-width;      /* 1 */
