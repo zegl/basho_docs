@@ -8,6 +8,7 @@
  * should start happening is... yet to be determined.
  */
 
+
 /**
  * Height of the Banner element (at applicable breakpoints)
  */
@@ -19,6 +20,19 @@ $banner-buffer-md-up:   1rem;
 $body-padding-top-sm-down: $banner-height-sm-down + $banner-buffer-sm-down;
 $body-padding-top-md-up:   $banner-height-md-up + $banner-buffer-md-up;
 
+$content-nav-width: 13rem;
+
+
+
+body {
+  padding-top: $body-padding-top-sm-down;
+
+  @include wide-from(md) {
+    padding-top: $body-padding-top-md-up;
+  }
+}
+
+
 
 /**
  * Banner
@@ -26,8 +40,7 @@ $body-padding-top-md-up:   $banner-height-md-up + $banner-buffer-md-up;
  *    screen, but the body content might push past that, and widen this as well.
  * 2. Because all elements are floating and vertically aligned, setting a
  *    padding-top has the effect of pushing all contained elements down by that
- *    amount, and a padding-bottom will similarly push content up. Neither will
- *    affect the final size of the Banner.
+ *    amount, and a padding-bottom will similarly push content up.
  */
 .banner {
   position: fixed;
@@ -39,7 +52,7 @@ $body-padding-top-md-up:   $banner-height-md-up + $banner-buffer-md-up;
   padding: 0 1rem 0 1.25rem; /* 2 */
 
   background: linear-gradient(to top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,1) 80%);
-  // This is for IE6-9. Not sure if we want ot bother w/ it.
+  // This is for IE6-9. Not sure if we want to bother w/ it.
   // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#CCffffff', GradientType=0 );
 
   //TOOD: Make this better. Separate element, maybe? Box-shadow?
@@ -47,7 +60,7 @@ $body-padding-top-md-up:   $banner-height-md-up + $banner-buffer-md-up;
 
   @include wide-from(md) {
     height: $banner-height-md-up;
-    padding: .5rem .75rem 0 .75rem; /* 2 */
+    padding: .5rem .75rem .25rem .75rem; /* 2 */
   }
 }
 
@@ -67,10 +80,39 @@ $body-padding-top-md-up:   $banner-height-md-up + $banner-buffer-md-up;
 
 
 
-body {
-  padding-top: $body-padding-top-sm-down;
+$content-nav-padding: 1rem;
+
+.content-nav {
+  position: fixed;
+  left:     0;
+
+  min-height: 100%;
+  width: $content-nav-width;
+  padding-left:  1rem;
+  padding-right: .5rem;
+}
+
+
+
+body > article {
+  padding: 0 .5rem;
 
   @include wide-from(md) {
-    padding-top: $body-padding-top-md-up;
+    padding-right: 1rem;
+    margin-left: $content-nav-width;
+  }
+}
+
+
+
+body > footer {
+  margin: 4rem 1rem 0 1rem;
+  padding-top: 2rem;
+
+  text-align: center;
+  border-top: 1px solid #eaeaea;
+
+  @include wide-from(md) {
+    margin-left: $content-nav-width;
   }
 }

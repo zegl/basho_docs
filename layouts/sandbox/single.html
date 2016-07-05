@@ -354,7 +354,7 @@
 {{ if $toc }}
       <!--TODO: Look into using Hugo's ToCs instead of our own? -->
       <nav class="table-of-contents">
-        <h2 class="table-of-contents__title">Contents</h2>
+        <h2 class="table-of-contents__title" hidden>Contents</h2>
         <!-- NB. This wrapp is significant for ToCs w/ multiple columns -->
         <div class="table-of-contents__wrapper">
           <ol class="table-of-contents__items"></ol>
@@ -387,19 +387,21 @@
 {{/* ========================================================================================== */}}
 
   <footer>
-    <p class="center-text">
+    <p>
       <a href="http://basho.com/">Basho.com</a>
       &nbsp;&nbsp;-&nbsp;&nbsp;
       <a href="http://docs.basho.com/">Docs Home</a>
       &nbsp;&nbsp;-&nbsp;&nbsp;
       <a href="http://basho.com/contact/">Contact Basho</a>
     </p>
-    <p class="center-text">
+    <p>
       This work is licensed under a
+      <br class="[bs] hidden-lg-up">
       <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">
-        Creative Commons Attribution 4.0 International Public License
+        Creative Commons Attribution 4.0 <!-- <br class="[bs] hidden-lg-up"> --> International Public License
       </a>
-      <br>
+    </p>
+    <p>
       <!--TODO: Figure out how to make the year auto-updating. I am totally going to forget
                 to update it if we don't automate that junk right now. -->
       © 2011-2016&nbsp;<a href="http://www.basho.com">Basho Technologies, Inc.</a>
