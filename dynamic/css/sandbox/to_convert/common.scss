@@ -46,46 +46,6 @@ $versionColorInactive    : #ddd;
 /* == Dimensions ================================= */
 $mobilePageGutter : 0.6em;
 
-/* =============================================================================
-   Convenience Classes -- Layout
-   ========================================================================== */
-
-.block {
-  display : block;
-}
-
-.inline-block {
-  display : inline-block;
-}
-
-.float-left {
-  float : left;
-}
-
-.float-right {
-  float : right;
-}
-
-.clear {
-  clear : both;
-}
-
-.clear-left {
-  clear : left;
-}
-
-.clear-right {
-  clear : right;
-}
-
-.overflow,
-.clearfix {
-  overflow : auto;
-}
-
-.overflow-hidden {
-  overflow : hidden;
-}
 
 /* =============================================================================
    Mixins
@@ -103,12 +63,6 @@ $mobilePageGutter : 0.6em;
 @mixin minSize($width: auto, $height: auto) {
   min-width  : $width;
   min-height : $height;
-}
-
-@mixin vendor($prop, $args) {
-  -webkit-#{$prop} : $args;
-  -moz-#{$prop}    : $args;
-  #{$prop}         : $args;
 }
 
 @mixin boxShadow($args) {
@@ -142,12 +96,6 @@ $mobilePageGutter : 0.6em;
   -ms-transition     : all 0.5s ease;
 }
 
-@mixin arrowVertical($base, $point,  $size, $color) {
-  border           : #{$size} solid transparent;
-  border-#{$base}  : #{$size} solid #{$color};
-  border-#{$point} : none;
-}
-
 @mixin gradient($fallBack, $rgbaTop, $rgbaBottom) {
   background : #{$fallBack}; /* Fallback for non-rgba browsers */
   background : -moz-linear-gradient(top, #{$rgbaTop} 0%, #{$rgbaBottom} 100%); /* FF3.6+ */
@@ -161,10 +109,6 @@ $mobilePageGutter : 0.6em;
 /* =============================================================================
    Convenience Classes -- Generic
    ========================================================================== */
-
-.center-text {
-  text-align : center;
-}
 
 .green-link {
   display         : block;
