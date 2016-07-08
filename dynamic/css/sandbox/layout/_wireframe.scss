@@ -5,8 +5,27 @@
  * while still communicating the essentials of the wireframe layout of a typical
  * content page. Individual block layouts should be separated out into their own
  * layout/*.scss files if they're too large to quickly parse here. When that
- * should start happening is... yet to be determined.
+ * should start happening is... yet to be determined. For now the rule of thumb
+ * is that this file should only contain positional and sizing styles for top-
+ * level block elements.
  */
+
+/**
+ * Styling Toggles
+ * ===============
+ * Toggle these to see what major changes in style will look like.
+ * Gonna make life kinda hard until we come to consensus, but that's half the
+ * point of this experiment. gl hf.
+ */
+
+/**
+ * Whether or not the content navigation sidebar should be the full height of
+ * the page. If so, the banner's width will be reduced by the width of the
+ * content nav. If not, the content nav's height will be reduced by the height
+ * of the banner.
+ */
+$content-nav-is-full-height: true;
+
 
 
 /**
@@ -17,30 +36,38 @@ $banner-buffer-sm-down: 0.5rem;
 $banner-height-md-up:   4.5rem;
 $banner-buffer-md-up:   1rem;
 
-$body-padding-top-sm-down: $banner-height-sm-down + $banner-buffer-sm-down;
-$body-padding-top-md-up:   $banner-height-md-up + $banner-buffer-md-up;
+$article-padding-top-sm-down: $banner-height-sm-down + $banner-buffer-sm-down;
+$article-padding-top-md-up:   $banner-height-md-up   + $banner-buffer-md-up;
 
-$content-nav-width: 13rem;
+$content-nav-width: 14rem;
 
 
 
-body {
-  padding-top: $body-padding-top-sm-down;
+/**
+ * Content Navigation
+ * POSITION & SIZE ONLY -- See _content-nav.scss for presentation.
+ * 1. This should be set in the markup, but is important to know.
+ */
+.content-nav {
+  // @extend .hidden-sm-down; /* 1 */
+  position: fixed;
 
-  @include wide-from(md) {
-    padding-top: $body-padding-top-md-up;
-  }
+  @if $content-nav-is-full-height == true { top: 0;                    }
+  @else                                   { top: $banner-height-md-up; }
+
+  left: 0;
+  width: $content-nav-width;
+
+  height: 100%;
 }
 
 
 
 /**
  * Banner
+ * POSITION & SIZE ONLY -- See _banner.scss for presentation.
  * 1. Fill the width of the body. This will hopefully be the width of the
  *    screen, but the body content might push past that, and widen this as well.
- * 2. Because all elements are floating and vertically aligned, setting a
- *    padding-top has the effect of pushing all contained elements down by that
- *    amount, and a padding-bottom will similarly push content up.
  */
 .banner {
   position: fixed;
@@ -49,69 +76,37 @@ body {
   right:    0; /* 1 */
   height:   $banner-height-sm-down;
 
-  padding: 0 1rem 0 1.25rem; /* 2 */
-
-  background: linear-gradient(to top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,1) 80%);
-  // This is for IE6-9. Not sure if we want to bother w/ it.
-  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#CCffffff', GradientType=0 );
-
-  //TOOD: Make this better. Separate element, maybe? Box-shadow?
-  border-bottom: 1px solid #eaeaea; //TODO: Variablize color
-
   @include wide-from(md) {
+    @if $content-nav-is-full-height == true { left: $content-nav-width; }
+    @else                                   { left: 0;                  }
     height: $banner-height-md-up;
-    padding: .5rem .75rem .25rem .75rem; /* 2 */
-  }
-}
-
-.banner__element-wrapper,
-.banner__element-wrapper--menu-bars,
-.banner__element-wrapper--version-selector,
-.banner__element-wrapper--docs-logo,
-.banner__element-wrapper--downloads-btn, {
-  height: 100%;
-}
-
-.banner__element-wrapper--version-selector {
-  @include wide-from(md) {
-    margin-right: 2rem;
   }
 }
 
 
 
-$content-nav-padding: 1rem;
-
-.content-nav {
-  position: fixed;
-  left:     0;
-
-  min-height: 100%;
-  width: $content-nav-width;
-  padding-left:  1rem;
-  padding-right: .5rem;
-}
-
-
-
+/**
+ * Main Article
+ * NB. This element isn't getting its own class (yet) b/c its content is
+ * primarily text and other inline elements. This may change later, but I'm
+ * assuming most salient styles are going to be added in _base.scss.
+ */
 body > article {
-  padding: 0 .5rem;
+  padding: $article-padding-top-sm-down .5rem 0 .5rem;
 
   @include wide-from(md) {
-    padding-right: 1rem;
+    padding: $article-padding-top-md-up 1rem 0 .5rem;
     margin-left: $content-nav-width;
   }
 }
 
 
 
-body > footer {
-  margin: 4rem 1rem 0 1rem;
-  padding-top: 2rem;
-
-  text-align: center;
-  border-top: 1px solid #eaeaea;
-
+/**
+ * Content Footer
+ * POSITION & SIZE ONLY -- See _content-info-footer.scss for presentation.
+ */
+.content-info-footer {
   @include wide-from(md) {
     margin-left: $content-nav-width;
   }

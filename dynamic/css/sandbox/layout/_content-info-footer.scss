@@ -1,0 +1,10 @@
+.content-info-footer {
+  padding: 1rem .25rem 0rem .25rem;
+
+  text-align: center;
+  border-top: 1px solid #eaeaea;
+
+  @include wide-from(md) {
+    padding: 4rem 1rem 1rem 1rem;
+  }
+}
