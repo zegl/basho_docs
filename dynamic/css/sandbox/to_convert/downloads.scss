@@ -38,7 +38,7 @@
         img {
           max-width: 18px;
           &:hover {
-            @include boxShadow(0 0 6px $orange)
+            @include boxShadow(0 0 6px #f99d33 /* $orange */)
           }
         }
       }

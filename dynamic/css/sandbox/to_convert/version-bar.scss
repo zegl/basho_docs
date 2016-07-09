@@ -141,7 +141,7 @@ body.latest .versions {
   position      : relative;
   padding       : 3px 0;
   margin-bottom : 3px;
-  background    : $versionColor-1-4-x;
+  background    : #f99d33 /* $versionColor-1-4-x */;
   text-align    : center;
   cursor        : pointer;
   color         : #fff;
@@ -157,7 +157,7 @@ body.latest .versions {
   position : relative;
   width : 0;
   margin : 0 auto 3px auto;
-  @include arrowVertical(top, bottom, 6px, $orange);
+  @include arrowVertical(top, bottom, 6px, #f99d33 /* $orange */);
 }
 
 ol#version-list {
@@ -180,7 +180,7 @@ ol#version-list {
   }
 
   li {
-    background      : $lightGreen;
+    background      : #a7c7bf /* $lightGreen */;
     border          : none;
     border-top      : 1px solid #fff;
     border-right    : 1px solid #fff;
@@ -212,63 +212,63 @@ ol#version-list {
     }
 
     &.versions-0 {
-      background   : $versionColor-2-0-x;
+      background   : #ea7107 /* $versionColor-2-0-x */;
         &:hover,
         &.current {
-          background : $lightVersionColor-2-0-x;
+          background : #f87e13 /* $lightVersionColor-2-0-x */;
         }
     }
 
     &.versions-1 {
-      background   : $versionColor-1-4-x;
+      background   : #f99d33 /* $versionColor-1-4-x */;
       &:hover,
       &.current {
-        background : $lightVersionColor-1-4-x;
+        background : #faa94c /* $lightVersionColor-1-4-x */;
       }
     }
 
     &.versions-2 {
-      background   : $versionColor-1-3-x;
+      background   : #5e8782 /* $versionColor-1-3-x */;
       &:hover,
       &.current {
-        background : $lightVersionColor-1-3-x;
+        background : #689690 /* $lightVersionColor-1-3-x */;
       }
     }
 
     &.versions-3 {
-      background   : $versionColor-1-2-x;
+      background   : #79aeb6 /* $versionColor-1-2-x */;
       &:hover,
       &.current {
-        background : $lightVersionColor-1-2-x;
+        background : #8ab8bf /* $lightVersionColor-1-2-x */;
       }
     }
 
     &.versions-4 {
-      background   : $versionColor-1-1-x;
+      background   : #6c8997 /* $versionColor-1-1-x */;
       &:hover,
       &.current {
-        background : $lightVersionColor-1-1-x;
+        background : #7b95a2 /* $lightVersionColor-1-1-x */;
       }
     }
 
     &.versions-5 {
-      background   : $versionColor-1-0-x;
+      background   : #99afac /* $versionColor-1-0-x */;
       &:hover,
       &.current {
-        background : $lightVersionColor-1-0-x;
+        background : #a7bab8 /* $lightVersionColor-1-0-x */;
       }
     }
 
     &[class*="versions-"] {
       &[class~="inactive"] {
-        background : $versionColorInactive;
+        background : #ddd /* $versionColorInactive */;
         a {
-          color : $inactiveText;
+          color : #AAA /* $inactiveText */;
         }
         &:hover {
-          background : $versionColorInactive;
+          background : #ddd /* $versionColorInactive */;
           a {
-            color : $inactiveText;
+            color : #AAA /* $inactiveText */;
           }
         }
       }
@@ -296,34 +296,34 @@ body[class*="ver-2-0"] {
   .alert-version {
     .version-icon-alert-version-num,
     a {
-      color : $lightVersionColor-2-0-x;
+      color : #f87e13 /* $lightVersionColor-2-0-x */;
     }
     a:hover {
-      color : lighten($lightVersionColor-2-0-x, 5%);
+      color : lighten(#f87e13 /* $lightVersionColor-2-0-x */, 5%);
     }
   }
 
   #version-ddown-button {
     &.selected {
       .version-ddown-title {
-        color : $lightVersionColor-2-0-x;
+        color : #f87e13 /* $lightVersionColor-2-0-x */;
       }
       .version-ddown-number {
-        background : $lightVersionColor-2-0-x;
+        background : #f87e13 /* $lightVersionColor-2-0-x */;
       }
       .version-ddown-arrow {
-        @include arrowVertical(top, bottom, 6px, $lightVersionColor-2-0-x);
+        @include arrowVertical(top, bottom, 6px, #f87e13 /* $lightVersionColor-2-0-x */);
       }
     }
     &.unselected {
       .version-ddown-title {
-        color : $versionColor-2-0-x;
+        color : #ea7107 /* $versionColor-2-0-x */;
       }
       .version-ddown-number {
-        background : $versionColor-2-0-x;
+        background : #ea7107 /* $versionColor-2-0-x */;
       }
       .version-ddown-arrow {
-        @include arrowVertical(top, bottom, 6px, $versionColor-2-0-x);
+        @include arrowVertical(top, bottom, 6px, #ea7107 /* $versionColor-2-0-x */);
       }
     }
   }
@@ -334,34 +334,34 @@ body[class*="ver-1-4"] {
   .alert-version {
     .version-icon-alert-version-num,
     a {
-      color : $versionColor-1-4-x;
+      color : #f99d33 /* $versionColor-1-4-x */;
     }
     a:hover {
-      color : $lightVersionColor-1-4-x;
+      color : #faa94c /* $lightVersionColor-1-4-x */;
     }
   }
 
   #version-ddown-button {
     &.selected {
       .version-ddown-title {
-        color : $lightVersionColor-1-4-x;
+        color : #faa94c /* $lightVersionColor-1-4-x */;
       }
       .version-ddown-number {
-        background : $lightVersionColor-1-4-x;
+        background : #faa94c /* $lightVersionColor-1-4-x */;
       }
       .version-ddown-arrow {
-        @include arrowVertical(top, bottom, 6px, $lightVersionColor-1-4-x);
+        @include arrowVertical(top, bottom, 6px, #faa94c /* $lightVersionColor-1-4-x */);
       }
     }
     &.unselected {
       .version-ddown-title {
-        color : $versionColor-1-4-x;
+        color : #f99d33 /* $versionColor-1-4-x */;
       }
       .version-ddown-number {
-        background : $versionColor-1-4-x;
+        background : #f99d33 /* $versionColor-1-4-x */;
       }
       .version-ddown-arrow {
-        @include arrowVertical(top, bottom, 6px, $versionColor-1-4-x);
+        @include arrowVertical(top, bottom, 6px, #f99d33 /* $versionColor-1-4-x */);
       }
     }
   }
@@ -372,34 +372,34 @@ body[class*="ver-1-3"] {
   .alert-version {
     .version-icon-alert-version-num,
     a {
-      color : lighten($versionColor-1-3-x, 15%);
+      color : lighten(#5e8782 /* $versionColor-1-3-x */, 15%);
     }
     a:hover {
-      color : lighten($versionColor-1-3-x, 20%);
+      color : lighten(#5e8782 /* $versionColor-1-3-x */, 20%);
     }
   }
 
   #version-ddown-button {
     &.selected {
       .version-ddown-title {
-        color : $lightVersionColor-1-3-x;
+        color : #689690 /* $lightVersionColor-1-3-x */;
       }
       .version-ddown-number {
-        background : $lightVersionColor-1-3-x;
+        background : #689690 /* $lightVersionColor-1-3-x */;
       }
       .version-ddown-arrow {
-        @include arrowVertical(top, bottom, 6px, $lightVersionColor-1-3-x);
+        @include arrowVertical(top, bottom, 6px, #689690 /* $lightVersionColor-1-3-x */);
       }
     }
     &.unselected {
       .version-ddown-title {
-        color : $versionColor-1-3-x;
+        color : #5e8782 /* $versionColor-1-3-x */;
       }
       .version-ddown-number {
-        background : $versionColor-1-3-x;
+        background : #5e8782 /* $versionColor-1-3-x */;
       }
       .version-ddown-arrow {
-        @include arrowVertical(top, bottom, 6px, $versionColor-1-3-x);
+        @include arrowVertical(top, bottom, 6px, #5e8782 /* $versionColor-1-3-x */);
       }
     }
   }
@@ -410,34 +410,34 @@ body[class*="ver-1-2"] {
   .alert-version {
     .version-icon-alert-version-num,
     a {
-      color : $versionColor-1-2-x;
+      color : #79aeb6 /* $versionColor-1-2-x */;
     }
     a:hover {
-      color : $lightVersionColor-1-2-x;
+      color : #8ab8bf /* $lightVersionColor-1-2-x */;
     }
   }
 
   #version-ddown-button {
     &.selected {
       .version-ddown-title {
-        color : $lightVersionColor-1-2-x;
+        color : #8ab8bf /* $lightVersionColor-1-2-x */;
       }
       .version-ddown-number {
-        background : $lightVersionColor-1-2-x;
+        background : #8ab8bf /* $lightVersionColor-1-2-x */;
       }
       .version-ddown-arrow {
-        @include arrowVertical(top, bottom, 6px, $lightVersionColor-1-2-x);
+        @include arrowVertical(top, bottom, 6px, #8ab8bf /* $lightVersionColor-1-2-x */);
       }
     }
     &.unselected {
       .version-ddown-title {
-        color : $versionColor-1-2-x;
+        color : #79aeb6 /* $versionColor-1-2-x */;
       }
       .version-ddown-number {
-        background : $versionColor-1-2-x;
+        background : #79aeb6 /* $versionColor-1-2-x */;
       }
       .version-ddown-arrow {
-        @include arrowVertical(top, bottom, 6px, $versionColor-1-2-x);
+        @include arrowVertical(top, bottom, 6px, #79aeb6 /* $versionColor-1-2-x */);
       }
     }
   }
@@ -448,34 +448,34 @@ body[class*="ver-1-1"] {
   .alert-version {
     .version-icon-alert-version-num,
     a {
-      color : lighten($versionColor-1-1-x, 12%);
+      color : lighten(#6c8997 /* $versionColor-1-1-x */, 12%);
     }
     a:hover {
-      color : lighten($versionColor-1-1-x, 17%);
+      color : lighten(#6c8997 /* $versionColor-1-1-x */, 17%);
     }
   }
 
   #version-ddown-button {
     &.selected {
       .version-ddown-title {
-        color : $lightVersionColor-1-1-x;
+        color : #7b95a2 /* $lightVersionColor-1-1-x */;
       }
       .version-ddown-number {
-        background : $lightVersionColor-1-1-x;
+        background : #7b95a2 /* $lightVersionColor-1-1-x */;
       }
       .version-ddown-arrow {
-        @include arrowVertical(top, bottom, 6px, $lightVersionColor-1-1-x);
+        @include arrowVertical(top, bottom, 6px, #7b95a2 /* $lightVersionColor-1-1-x */);
       }
     }
     &.unselected {
       .version-ddown-title {
-        color : $versionColor-1-1-x;
+        color : #6c8997 /* $versionColor-1-1-x */;
       }
       .version-ddown-number {
-        background : $versionColor-1-1-x;
+        background : #6c8997 /* $versionColor-1-1-x */;
       }
       .version-ddown-arrow {
-        @include arrowVertical(top, bottom, 6px, $versionColor-1-1-x);
+        @include arrowVertical(top, bottom, 6px, #6c8997 /* $versionColor-1-1-x */);
       }
     }
   }
@@ -486,34 +486,34 @@ body[class*="ver-1-0"] {
   .alert-version {
     .version-icon-alert-version-num,
     a {
-      color : $versionColor-1-0-x;
+      color : #99afac /* $versionColor-1-0-x */;
     }
     a:hover {
-      color : $lightVersionColor-1-0-x;
+      color : #a7bab8 /* $lightVersionColor-1-0-x */;
     }
   }
 
   #version-ddown-button {
     &.selected {
       .version-ddown-title {
-        color : $lightVersionColor-1-0-x;
+        color : #a7bab8 /* $lightVersionColor-1-0-x */;
       }
       .version-ddown-number {
-        background : $lightVersionColor-1-0-x;
+        background : #a7bab8 /* $lightVersionColor-1-0-x */;
       }
       .version-ddown-arrow {
-        @include arrowVertical(top, bottom, 6px, $lightVersionColor-1-0-x);
+        @include arrowVertical(top, bottom, 6px, #a7bab8 /* $lightVersionColor-1-0-x */);
       }
     }
     &.unselected {
       .version-ddown-title {
-        color : $versionColor-1-0-x;
+        color : #99afac /* $versionColor-1-0-x */;
       }
       .version-ddown-number {
-        background : $versionColor-1-0-x;
+        background : #99afac /* $versionColor-1-0-x */;
       }
       .version-ddown-arrow {
-        @include arrowVertical(top, bottom, 6px, $versionColor-1-0-x);
+        @include arrowVertical(top, bottom, 6px, #99afac /* $versionColor-1-0-x */);
       }
     }
   }

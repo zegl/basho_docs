@@ -10,12 +10,12 @@
 //TODO: This color was constructed to match the previous (hardcoded) value of
 //      the icon font nav-icons. We should either come up with a better color
 //      or add this to common.scss and use it elsewhere.
-$fadedGray : saturate(lighten($darkGrey, 10), 5);
+$fadedGray : saturate(lighten(#777a7e /* $darkGrey */, 10), 5);
 
 aside#nav-container {
   @extend .sans;
   @include boxShadow(none);
-  background : $subtleGrey;
+  background : #eaeaea /* $subtleGrey */;
 
   -o-user-select      : none;
   -ms-user-select     : none;
@@ -25,11 +25,11 @@ aside#nav-container {
 
   a {
     @include transitionAll(color 0.5s ease);
-    color           : $darkGrey;
+    color           : #777a7e /* $darkGrey */;
     text-decoration : none;
 
     &:hover {
-      color : $extraDarkGrey;
+      color : #222222 /* $extraDarkGrey */;
     }
   }
 
@@ -52,7 +52,7 @@ aside#nav-container {
     @extend .sans-bold;
 
     & > li {
-      border-bottom : 1px solid $lightGrey;
+      border-bottom : 1px solid #ccced1 /* $lightGrey */;
     }
   }
   .depth-1 {
@@ -69,21 +69,21 @@ aside#nav-container {
   /* Selected Item Variation
    * ----------------------- */
   .current > a {
-    background : $blueGreen;
-    color : $subtleGrey;
+    background : #79aeb5 /* $blueGreen */;
+    color : #eaeaea /* $subtleGrey */;
   }
   .current > div {
-    background : $blueGreen;
+    background : #79aeb5 /* $blueGreen */;
 
     a,
     .separator,
     .nav-icon {
-      color : $subtleGrey;
+      color : #eaeaea /* $subtleGrey */;
     }
     .menu-toggle {
-      border-top-color    : $subtleGrey;
+      border-top-color    : #eaeaea /* $subtleGrey */;
       /* selector specificity bump */
-      &.open { border-bottom-color : $subtleGrey; }
+      &.open { border-bottom-color : #eaeaea /* $subtleGrey */; }
     }
   }
 
@@ -123,21 +123,21 @@ aside#nav-container {
     input[type="search"] {
       position         : relative;
       width            : 76%;
-      background-color : $fieldGrey;
+      background-color : #b0b3b6 /* $fieldGrey */;
       padding          : 10px 0 10px 24%;
       margin           : 0;
       border           : none;
-      color            : $white;
+      color            : #fff /* $white */;
       line-height      : 1.3rem;
       @extend .sans;
 
-      &::-webkit-input-placeholder { color : $white; } /* WebKit browsers */
-      &:-moz-placeholder           { color : $white; } /* Mozilla Firefox 4 to 18 */
-      &::-moz-placeholder          { color : $white; } /* Mozilla Firefox 19+ */
-      &:-ms-input-placeholder      { color : $white; } /* Internet Explorer 10+ */
+      &::-webkit-input-placeholder { color : #fff /* $white */; } /* WebKit browsers */
+      &:-moz-placeholder           { color : #fff /* $white */; } /* Mozilla Firefox 4 to 18 */
+      &::-moz-placeholder          { color : #fff /* $white */; } /* Mozilla Firefox 19+ */
+      &:-ms-input-placeholder      { color : #fff /* $white */; } /* Internet Explorer 10+ */
 
       &:focus {
-        background-color : $darkGrey;
+        background-color : #777a7e /* $darkGrey */;
       }
     }
 
@@ -150,7 +150,7 @@ aside#nav-container {
 
       .nav-icon,
       .separator {
-        color    : $white;
+        color    : #fff /* $white */;
       }
     }
   }
@@ -168,11 +168,11 @@ aside#nav-container {
     top           : 17px;
     right         : 16px;
     content       : '';
-    @include arrowVertical(top, bottom, 5px, $grey);
+    @include arrowVertical(top, bottom, 5px, #b2b2b2 /* $grey */);
     @include transitionAll(border-color 0.5s ease);
 
     &.open {
-      @include arrowVertical(bottom, top, 5px, $grey);
+      @include arrowVertical(bottom, top, 5px, #b2b2b2 /* $grey */);
     }
   }
 
@@ -187,7 +187,7 @@ aside#nav-container {
     margin          : -83px 0 0 0; // Top margin should be -(height + 1)
     padding         : 0;
     list-style-type : none;
-    border-top      : 1px solid #666; //$darkBlueGreen;
+    border-top      : 1px solid #666; //#619ba3 /* $darkBlueGreen */;
 
     li {
       margin  : 0;
@@ -197,15 +197,15 @@ aside#nav-container {
       a {
         @extend .sans-bold;
         display       : block;
-        background    : $darkGrey; //$blueGreen;
-        color         : $white;
+        background    : #777a7e /* $darkGrey */; //#79aeb5 /* $blueGreen */;
+        color         : #fff /* $white */;
         height        : 32px;
-        border-bottom : 1px solid #666; //$darkBlueGreen;
+        border-bottom : 1px solid #666; //#619ba3 /* $darkBlueGreen */;
         padding       :  8px 0 0 0;
         font-size     : 0.9rem;
 
         &:hover {
-          background : darken($darkGrey, 2%);
+          background : darken(#777a7e /* $darkGrey */, 2%);
         }
 
         span {
@@ -214,7 +214,7 @@ aside#nav-container {
 
         .separator,
         .nav-icon {
-          color : $white;
+          color : #fff /* $white */;
         }
       }
     }
@@ -230,14 +230,14 @@ aside#nav-container {
     }
 
     &.visit-basho {
-      background     : $orange;
+      background     : #f99d33 /* $orange */;
       margin-top     : 13px;
       padding        : 5px 0 5px 0;
 
       .separator,
       .nav-icon,
       a {
-        color : $white;
+        color : #fff /* $white */;
       }
     }
 

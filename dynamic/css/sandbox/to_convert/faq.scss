@@ -19,7 +19,7 @@ details summary::marker {
 details.question > summary {
   @extend .sans-bold;
   outline : none;
-  color   : $linkBlue;
+  color   : #2984a9 /* $linkBlue */;
   padding : 5px 0;
   
   &::before {
@@ -32,7 +32,7 @@ details.question > summary {
   
   &:hover {
     cursor : pointer;
-    color  : $orange;
+    color  : #f99d33 /* $orange */;
   }
   
   p {

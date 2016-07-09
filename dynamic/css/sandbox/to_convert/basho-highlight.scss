@@ -15,7 +15,7 @@ $use-new-colors : true;
   pre code {
     display: block;
     background: #f8f8f8; // Darker than subtleGray
-    color: $darkerGrey;
+    color: #4f4f4f /* $darkerGrey */;
     padding: 0.5em;
   }
 
@@ -31,7 +31,7 @@ $use-new-colors : true;
 
   pre .hljs-comment,
   pre .hljs-title {
-    color: $darkGrey;
+    color: #777a7e /* $darkGrey */;
   }
 
   pre .hljs-variable,
@@ -46,7 +46,7 @@ $use-new-colors : true;
   pre .hljs-css .hljs-id,
   pre .hljs-css .hljs-class,
   pre .hljs-css .hljs-pseudo {
-    color: $orange;
+    color: #f99d33 /* $orange */;
   }
 
   pre .hljs-number,
@@ -56,12 +56,12 @@ $use-new-colors : true;
   pre .hljs-literal,
   pre .hljs-params,
   pre .hljs-constant {
-    color: $darkOrange;
+    color: #d97706 /* $darkOrange */;
   }
 
   pre .hljs-ruby .hljs-class .hljs-title,
   pre .hljs-css .hljs-rules .hljs-attribute {
-    color: $blueGreen
+    color: #79aeb5 /* $blueGreen */
   }
 
   pre .hljs-string,
@@ -70,11 +70,11 @@ $use-new-colors : true;
   pre .hljs-header,
   pre .hljs-ruby .hljs-symbol,
   pre .hljs-xml .hljs-cdata {
-    color: $lightOrange;
+    color: #fcc07f /* $lightOrange */;
   }
 
   pre .hljs-css .hljs-hexcolor {
-    color: $extraDarkGrey;
+    color: #222222 /* $extraDarkGrey */;
   }
 
   pre .hljs-function,
@@ -85,12 +85,12 @@ $use-new-colors : true;
   pre .hljs-perl .hljs-sub,
   pre .hljs-javascript .hljs-title,
   pre .hljs-coffeescript .hljs-title {
-    color: $fadedGreen;
+    color: #5a7772 /* $fadedGreen */;
   }
 
   pre .hljs-keyword,
   pre .hljs-javascript .hljs-function {
-    color: $lightOrange;
+    color: #fcc07f /* $lightOrange */;
   }
 
 } @else {

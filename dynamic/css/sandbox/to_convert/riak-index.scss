@@ -128,9 +128,9 @@
       @include size(800px, auto);
 
       a {
-        color : lighten($orange, 5%);
+        color : lighten(#f99d33 /* $orange */, 5%);
         &:hover {
-          color : lighten($orange, 15%);
+          color : lighten(#f99d33 /* $orange */, 15%);
         }
       }
 

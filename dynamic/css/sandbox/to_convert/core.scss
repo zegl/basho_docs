@@ -3,7 +3,7 @@
    ========================================================================== */
 
 html {
-  //@include bgPattern('content-bg.jpg', $subtleGrey);
+  //@include bgPattern('content-bg.jpg', #eaeaea /* $subtleGrey */);
 }
 
 body {
@@ -72,7 +72,7 @@ body {
   }
 
   div[role="main"] {
-    //@include bgPattern('content-bg.jpg', $subtleGrey);
+    //@include bgPattern('content-bg.jpg', #eaeaea /* $subtleGrey */);
     @include minSize(172px, 100%); // 172 is the width of #nav-container - this div's padding
     padding  : 0 25px 0 65px;
     margin   : 0 0 0 232px;
@@ -203,12 +203,12 @@ blockquote {
   // @extend .serif-italic;
   @include allCorners();
   margin     : 2em 40px;
-  background : lighten($orange, 30%);
-  border     : 1px solid lighten($orange, 15%);
+  background : lighten(#f99d33 /* $orange */, 30%);
+  border     : 1px solid lighten(#f99d33 /* $orange */, 15%);
   padding    : 7px 15px;
   font-style : normal;
   font-size  : 95%;
-  color      : $darkOrange;
+  color      : #d97706 /* $darkOrange */;
 }
 
 img {
@@ -247,7 +247,7 @@ iframe {
 
 div[role="main"] {
   // @extend .sans;
-  color     : $textColor;
+  color     : #000000 /* $textColor */;
   font-size : 110%;
   overflow  : visible;
 
@@ -256,7 +256,7 @@ div[role="main"] {
   }
 
   h1, h2, h3, h4, h5, h6 {
-    color       : $headerColor;
+    color       : #616366 /* $headerColor */;
     line-height : 1.2;
     @extend .clear;
   }
@@ -298,7 +298,7 @@ div[role="main"] {
     }
 
     a {
-      color : $headerColor;
+      color : #616366 /* $headerColor */;
     }
 
   @media screen and (max-width: 768px) {
@@ -325,7 +325,7 @@ div[role="main"] {
     }
 
     a {
-      color : $headerColor;
+      color : #616366 /* $headerColor */;
     }
   }
 
@@ -337,7 +337,7 @@ div[role="main"] {
     margin-top  : -89px;
 
     a {
-      color : $headerColor;
+      color : #616366 /* $headerColor */;
     }
   }
 
@@ -348,7 +348,7 @@ div[role="main"] {
     margin-top  : -104px;
 
     a {
-      color : $headerColor;
+      color : #616366 /* $headerColor */;
     }
   }
 
@@ -365,11 +365,11 @@ div[role="main"] {
   }
 
   a {
-    color           : $linkOrange;
+    color           : #e38c3a /* $linkOrange */;
     text-decoration : none;
 
     &:hover {
-      color : lighten($orange, 5%);
+      color : lighten(#f99d33 /* $orange */, 5%);
     }
 
     // Rule for appending the arrow image to links that send users off site.
@@ -467,12 +467,12 @@ div[role="main"] {
       padding          : 14px;
       display          : block;
       cursor           : pointer;
-      color            : $lightGrey;
+      color            : #ccced1 /* $lightGrey */;
       font-size        : 1.5rem;
       @include transitionAll(all 0.5s ease);
 
       &:hover {
-        color : $darkGrey;
+        color : #777a7e /* $darkGrey */;
       }
 
       @media screen and (max-width: 768px) {
@@ -519,7 +519,7 @@ div[role="main"] {
       top           : 0;
       left          : 0;
       //z-index       : 301;
-      //border-bottom : 6px solid $headerColor;
+      //border-bottom : 6px solid #616366 /* $headerColor */;
 
       #header {
         margin-left : 0;
@@ -565,7 +565,7 @@ div[role="main"] {
     .shadow-divider {
       @include size(100%, 1px);
       padding       : 1.2em 0 0 .5em;
-      border-bottom : 1px solid $subtleGrey;
+      border-bottom : 1px solid #eaeaea /* $subtleGrey */;
       margin-bottom : 1.2em;
 
       @media screen and (max-width: 768px) {
@@ -598,13 +598,13 @@ div[role="main"] {
       }
 
       a {
-        background    : $orange;
+        background    : #f99d33 /* $orange */;
         margin        : 0 0 0 0;
         padding-right : 16px;
         @extend .sans-bold;
 
         &:hover {
-          background : $orange;
+          background : #f99d33 /* $orange */;
           color      : #fff;
           color      : rgba(255, 255, 255, 1.0);
         }
@@ -628,7 +628,7 @@ div[role="main"] {
       background    : #fff;
       text-align    : left;
       z-index       : 500;
-      border        : 1px solid $lightGrey;
+      border        : 1px solid #ccced1 /* $lightGrey */;
       border-radius : 5px;
 
        @media screen and (max-width: 768px) {
@@ -671,7 +671,7 @@ div[role="main"] {
         position      : absolute;
         top           : -9px;
         right         : 6px;
-        @include arrowVertical(bottom, top, 9px, $lightGrey);
+        @include arrowVertical(bottom, top, 9px, #ccced1 /* $lightGrey */);
         z-index       : 600;
       }
     }
@@ -823,7 +823,7 @@ div[role="main"] {
      font-family   : 'OpenSansBold', sans-serif;
      // Remove the external-link widget.
      a {
-      color: $orange;
+      color: #f99d33 /* $orange */;
       text-decoration : none;
         &[href^="http://"], &[href^="https://"] {
           background    : none;
@@ -890,12 +890,12 @@ div[role="main"] {
   aside.secondary {
     @extend .box-green;
     padding       : 25px;
-    color         : $darkGrey;
+    color         : #777a7e /* $darkGrey */;
     text-align    : left;
     margin-top    : 1em;
 
     h1, h2, h3, h4, h5, h6 {
-      color       : $darkGrey;
+      color       : #777a7e /* $darkGrey */;
       line-height : 1.2;
     }
 
@@ -941,15 +941,15 @@ div[role="main"] {
     }
 
     a {
-      //color : lighten($orange, 20%);
-      color : $orange;
+      //color : lighten(#f99d33 /* $orange */, 20%);
+      color : #f99d33 /* $orange */;
       &:hover {
-        color : lighten($orange, 5%);
+        color : lighten(#f99d33 /* $orange */, 5%);
       }
     }
 
     .keywords {
-      border-top  : 1px solid $lightGrey;
+      border-top  : 1px solid #ccced1 /* $lightGrey */;
       padding-top : 0.8em;
 
       h4 {
@@ -976,11 +976,11 @@ div[role="main"] {
 
       a {
         display         : inline;
-        color           : $headerColor;
+        color           : #616366 /* $headerColor */;
         text-decoration : none;
 
         &:hover {
-          color : $linkBlue;
+          color : #2984a9 /* $linkBlue */;
         }
 
         &[href^="http://"], &[href^="https://"] {
@@ -990,11 +990,11 @@ div[role="main"] {
 
       a.disabled {
         display         : inline;
-        color           : $headerColor;
+        color           : #616366 /* $headerColor */;
         text-decoration : none;
 
         &:hover {
-          color : $headerColor;
+          color : #616366 /* $headerColor */;
         }
 
         &[href^="http://"], &[href^="https://"] {
@@ -1366,7 +1366,7 @@ div[role=main] {
       a {
         vertical-align: super;
         font-size:80%;
-        color:$darkOrange;
+        color:#d97706 /* $darkOrange */;
         padding-left:3px;
       }
     }
@@ -1386,16 +1386,16 @@ article {
     .up a {
       font-size       : 90%;
       text-decoration : none;
-      color           : $linkBlue;
+      color           : #2984a9 /* $linkBlue */;
 
       &:hover {
-        color : $orange;
+        color : #f99d33 /* $orange */;
       }
     }
 
     ul {
       padding    : 5px 5px 10px;
-      border-top : 1px solid $subtleGrey;
+      border-top : 1px solid #eaeaea /* $subtleGrey */;
       //border-top : 1px dashed silver;
 
       li {
@@ -1572,7 +1572,7 @@ body#dual {
         }
       }
       th.docs, th.code {
-        border-bottom: 1px solid $subtleGrey;
+        border-bottom: 1px solid #eaeaea /* $subtleGrey */;
         h2 {
           font-size:28pt;
           padding: 5px;
@@ -1603,7 +1603,7 @@ body#dual {
             font: 18px Arial;
             -webkit-transition: opacity 0.2s linear;
             opacity:0;
-            color: $linkBlue;
+            color: #2984a9 /* $linkBlue */;
             text-decoration:none;
             &:hover {
               opacity: 1;
