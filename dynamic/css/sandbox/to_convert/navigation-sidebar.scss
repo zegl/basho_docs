@@ -250,7 +250,7 @@ aside#nav-container {
 
   a {
     @media screen and (max-width: 500px) {
-       padding : 7px $mobilePageGutter;
+       padding : 7px 0.6em;
     }
   }
 
@@ -264,7 +264,7 @@ aside#nav-container {
     @media screen and (max-width: 768px) {
       font-size : 1em;
       width : 1.75em;
-      margin-left : $mobilePageGutter;
+      margin-left : 0.6em;
     }
   }
 
@@ -273,7 +273,7 @@ aside#nav-container {
       float       : left;
       width       : 71%;
       margin-top  : -5px;
-      margin-left : $mobilePageGutter;
+      margin-left : 0.6em;
 
       .icon-container {
         margin-left : 0.3em;
