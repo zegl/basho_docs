@@ -63,7 +63,8 @@
 
 .green-link {
   display         : block;
-  color           : darken(saturate(#5a7772 /* $fadedGreen */, 25%), 18%);
+  // color           : darken(saturate(#5a7772 /* $fadedGreen */, 25%), 18%);
+  color           : #24514a;
   padding         : 2px 0 0 0;
   text-decoration : none;
   text-align      : center;
