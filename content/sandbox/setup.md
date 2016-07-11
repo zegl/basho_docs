@@ -8,7 +8,7 @@ menu:
     name: "Setup"
     identifier: "setup_index"
     weight: 110
-    pre: icon-install
+    pre: install
 toc: false
 canonical_link: "https://docs.basho.com/riak/kv/latest/setup"
 ---
