@@ -10,34 +10,33 @@
  * level block elements.
  */
 
-/**
- * Styling Toggles
- * ===============
- * Toggle these to see what major changes in style will look like.
- * Gonna make life kinda hard until we come to consensus, but that's half the
- * point of this experiment. gl hf.
- */
+// Styling Toggles
+// ===============
+// Toggle these to see what major changes in style will look like.
+// Gonna make life kinda hard until we come to consensus, but that's half the
+// point of this experiment. gl hf.
+// NB. Use SCSS comments for vars so the comments don't make it into the
+// compiled CSS and look weird w/o the variables defined.
 
-/**
- * Whether or not the content navigation sidebar should be the full height of
- * the page. If so, the banner's width will be reduced by the width of the
- * content nav. If not, the content nav's height will be reduced by the height
- * of the banner.
- */
+// Whether or not the content navigation sidebar should be the full height of
+// the page. If so, the banner's width will be reduced by the width of the
+// content nav. If not, the content nav's height will be reduced by the height
+// of the banner.
 $content-nav-is-full-height: true;
 
 
 
-/**
- * Height of the Banner element (at applicable breakpoints)
- */
+// Height of the Banner element (at applicable breakpoints)
 $banner-height-sm-down: 3.5rem;
 $banner-buffer-sm-down: 0.5rem;
 $banner-height-md-up:   4.5rem;
 $banner-buffer-md-up:   1rem;
 
+// Padding at the top of the <article> (and above <h#> elements) to keep the
+// Banner element from hiding text underneath it.
 $article-padding-top-sm-down: $banner-height-sm-down + $banner-buffer-sm-down;
 $article-padding-top-md-up:   $banner-height-md-up   + $banner-buffer-md-up;
+
 
 $content-nav-width: 14rem;
 
