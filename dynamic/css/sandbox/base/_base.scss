@@ -1,3 +1,43 @@
-// -----------------------------------------------------------------------------
-// This file contains very basic styles.
-// -----------------------------------------------------------------------------
+/**
+ * Basic Styling Rules
+ * ===================
+ * I'm really not sure what will live in this file. For the time being, basic
+ * styling and additional resets will be add here, and moved to other files as
+ * the CSS matures.
+ */
+
+body {
+  @extend %serif;
+}
+
+
+
+a {
+  color: $orange-dark;
+
+  &:hover {
+    color: $orange;
+    text-decoration: none;
+  }
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+  color: $gray;
+  a { color: $gray; }
+}
+
+h1 { line-height: 1.1; }
+h2 { line-height: 1.2; }
+h3, /* { line-height: 1.3; } */
+h4, /* { line-height: 1.3; } */
+h5, /* { line-height: 1.3; } */
+h6 { line-height: 1.3; }
+
+h1, /* { @extend %sans; } */
+h2, /* { @extend %sans; } */
+h3, /* { @extend %sans; } */
+h4 { @extend %sans; }
+h5, /* { @extend %sans-bold; } */
+h6 { @extend %sans-bold; }
