@@ -28,6 +28,15 @@ factum: totiens.
 - Animam de debere posita corpore est aliquid
 - Rastrorumque referuntur argentea fortia
 
+
+The quick brown fox jumps over the lazy dog
+
+_The quick brown fox jumps over the lazy dog_
+
+**The quick brown fox jumps over the lazy dog**
+
+**_The quick brown fox jumps over the lazy dog_**
+
 Iubeatis habet ipsa eadem restabam voluitque artus, care dicit frustraque obsita
 [interrumpente soror in](http://gelidumdumque.com/ab-etsi) quoque. Maiorque quae
 coniunx. Pia ignes adhaesit in imbres et fugit, mariti fugias; sacraria saligna
