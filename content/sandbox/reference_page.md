@@ -83,14 +83,14 @@ victor Achivam! Quis prima retinere: sonat haec foret neptis, haec undas ablato
 properatus tria. Altera taeda aetas altera aere auferat stupri pieros. At urbem
 indiciine exigit innectens pudore haesit; in abest!
 
-#### Ut rapui sine dare Praelata quid Region
+##### Ut rapui sine dare Praelata quid Region
 
 Ityn nunc temperat draconi Lapithae mater; aurea non! Hic audit magnos
 praequestus nefas terribilesque super formosa spectantem repulso. Rege sua usus
 feroque fuga primae, in sua habitantum odium quid bisulcam arvo ferunt flammis,
 mater.
 
-##### Quid indice fine ingeminat socio donata. Haud quanto ea crescit Rhoetei.
+###### Quid indice fine ingeminat socio donata. Haud quanto ea crescit Rhoetei.
 
 Rursus dentes et reliquit Sisyphio exerceor illo. Vires sunt coniunx ad
 monitisque ad obscuram, sole poteram.
@@ -99,12 +99,6 @@ Phaethon mitto; valle manus; non erat forsitan illi; nec resoluto. Omnibus
 animam pomi unda. Echionio imbres At si prohibente sed figura rege cinctaque
 turpius habebimus subito negavit ferebat. Naxoque non quisque quippe sic aut
 effugere palmas velox Aethiopasque negat!
-
-###### Rates venti terram recenti videtur parentes caedis formatus; ut terrore.
-
-Fuit delenda aut pariter erat! Rapiam fas quid non inmutatque laetitiam igne
-quae sacris humus. Audita flet non! Nec in ipsoque medias, pluvialibus scripta
-tecta Phorbantis ponere radice post grates?
 
 ## Cancrum pia donare transit crederet dicentem a
 
