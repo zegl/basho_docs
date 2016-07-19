@@ -20,9 +20,5 @@
   @include when-inside('.banner') {
     width:  p2r(150px);
     height: p2r(33px);
-    // Uncomment this to align the bottom of the head w/ the version-selector
-    // margin-top: p2r(-5px);
-    // Uncomment this to align the text base-line w/ the version-selector
-    // margin-top: p2r(5px);
   }
 }

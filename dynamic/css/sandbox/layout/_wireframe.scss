@@ -107,6 +107,7 @@ body > article {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  //TODO: Make this a mixin
   margin-top: -$article-padding-top-sm-down; /*    3 */
   padding-top: $article-padding-top-sm-down; /* 1, 3 */
 

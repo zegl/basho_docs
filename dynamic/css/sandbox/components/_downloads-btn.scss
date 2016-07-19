@@ -3,6 +3,8 @@
  */
 .downloads-btn {
 
+  //TODO: This is an expensive selector. Consider making a class for it.
+  //TODO: Make this CSS reactive somehow?
   a {
     background-color: $orange;
     color: $white;
