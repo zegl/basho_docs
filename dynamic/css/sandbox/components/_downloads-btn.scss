@@ -4,7 +4,9 @@
 .downloads-btn {
 
   a {
-    background-color: #f99d33; //TODO: variable
+    background-color: $orange;
+    color: $white;
+    @extend %sans-bold;
 
     height: 100%;
     width:  100%;
@@ -12,9 +14,6 @@
     border-radius: 0.3rem;
 
     cursor: pointer;
-
-    color: white; //TODO: variable
-    //TODO: Font bold
   }
 
   @include when-inside('.banner') {

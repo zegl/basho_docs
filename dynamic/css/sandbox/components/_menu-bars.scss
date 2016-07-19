@@ -26,10 +26,10 @@ $bar-height: 0.125em;
     width: inherit; //TODO: Test vs. padding-left on all browsers.
     height: $bar-height; /* 2 */
 
-    background: gray; //TODO: variablize
+    background: $gray;
     box-shadow:
-      0 ($bar-height * 2) 0 0 gray,
-      0 ($bar-height * 4) 0 0 gray;
+      0 ($bar-height * 2) 0 0 $gray,
+      0 ($bar-height * 4) 0 0 $gray;
   }
 
   @include when-inside('.banner') {
