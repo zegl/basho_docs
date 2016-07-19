@@ -12,32 +12,58 @@ body {
 
 
 
+::selection {
+  color: $white;
+  background: $orange-lighter;
+}
+
+
+
 a {
-  color: $orange-dark;
+  color: $orange-text-light;
 
   &:hover {
-    color: $orange;
+    color: $cyan-dark;
+    text-decoration: none;
+  }
+  &:focus {
+    color: $cyan;
     text-decoration: none;
   }
 }
 
 
 
+h1 { @extend %OpenSans-Light;
+     color: $gray;
+     line-height: 1.2;
+     font-size: 2.85rem; }
+h2 { @extend %OpenSans;
+     color: $gray;
+     line-height: 1.2;
+     font-size: 2.00rem; }
+h3 { @extend %OpenSans;
+     color: $gray;
+     line-height: 1.2;
+     font-size: 1.75rem; }
+h4 { @extend %OpenSans-Bold;
+     color: $gray;
+     line-height: 1.2;
+     font-size: 1.25rem; }
+h5 { @extend %OpenSans-Bold;
+     color: $gray;
+     line-height: 1.2;
+     font-size: 0.90rem; }
+h6 { @extend %OpenSans-Bold;
+     color: $gray;
+     line-height: 1.2;
+     font-size: 0.75rem; }
+
 h1, h2, h3, h4, h5, h6 {
-  color: $gray;
-  a { color: $gray; }
+  a {
+    color: $gray;
+    //TODO: Decide if we want header hovers to be orange or cyan-dark?
+    &:hover { color: $orange; }
+    &:focus { color: $cyan; }
+  }
 }
-
-h1 { line-height: 1.1; }
-h2 { line-height: 1.2; }
-h3, /* { line-height: 1.3; } */
-h4, /* { line-height: 1.3; } */
-h5, /* { line-height: 1.3; } */
-h6 { line-height: 1.3; }
-
-h1, /* { @extend %sans; } */
-h2, /* { @extend %sans; } */
-h3, /* { @extend %sans; } */
-h4 { @extend %sans; }
-h5, /* { @extend %sans-bold; } */
-h6 { @extend %sans-bold; }

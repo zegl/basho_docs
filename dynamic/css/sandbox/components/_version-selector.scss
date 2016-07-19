@@ -48,14 +48,15 @@
  * Version Selector Drop-down Menu; Downward Arrow
  * An example of the arrowVertical mixin; downward-facing orange arrow used to
  * indicate a drop-down menu.
- * 1. A margin-bottom won't affect the size of the parent element, so only apply
- *    a margin-top.
+ * 1. A margin-bottom won't affect the size of the parent element, so apply a
+ *    padding-bottom instead.
  * 2. fill width of the parent element w/o widening the border (aka the arrow).
  */
 .version-selector__arrow {
   @include arrowVertical(top, bottom, p2r(6px), $orange);
   position: relative;
-  margin-top: .25rem; /* 1 */
-  margin-left:  auto; /* 2 */
-  margin-right: auto; /* 2 */
+  margin-top: .25rem;     /* 1 */
+  padding-bottom: .25rem; /* 1 */
+  margin-left:  auto;     /* 2 */
+  margin-right: auto;     /* 2 */
 }

@@ -24,6 +24,8 @@
 
   a {
     color: $gray;
+    &:hover { color: $cyan-dark; }
+    &:focus { color: $cyan;      }
   }
 }
 
