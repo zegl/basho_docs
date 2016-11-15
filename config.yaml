@@ -114,6 +114,7 @@ params:
       releases:
         - ["1.0.0"]
     sandbox:
+      project_name: "Sandbox KV"
       path: "/sandbox"
       archived_path: "/old_sandbox"
       releases:
