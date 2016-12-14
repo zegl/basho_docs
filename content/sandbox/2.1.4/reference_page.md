@@ -235,6 +235,12 @@ Same code, using tripple-backtick fences with a malformed language defined;
 GET /types/<type>/buckets/<bucket>/keys/<key>
 ```
 
+Here's what 80 charactes looks like.
+
+```
+1234567*10*234567*20*234567*30*234567*40*234567*50*234567*60*234567*70*234567*80
+```
+
 ### Tabbed code blocks
 
 Generated using named-fences, one after the other;
