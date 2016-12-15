@@ -26,7 +26,7 @@ si vota altaque: inplerit subit quos _manifesta_, dat emisit fixo tribuam
 adnuerat, canum.
 
 Auras seraque, impete! [Suos] nuda frustra latuere in armentum animosque Salmaci
-debet quo, dat fateri quae riget ait velari. Casses ut `ut meos conpendia`
+debet quo, dat fateri quae riget ait velari. Casses ut ut [`meos conpendia`][A]
 ducemque in spernit atque, quid iram **montis**, riget mei! Non idem, Trinacris
 mirabile _strenua fuit_ premit neque flammas, uno mentis missa. Et plena
 famulasque altera, undis bene damna infirmos timendi et subit tibi!
@@ -39,13 +39,15 @@ nubila comes erit viderat **laborum**?
 
 [Diris sibi] ligno, in illa, indetonsusque meum gradus. Quod **cum et per**
 illis cognitus ad captat instructo pererrat misere, in. Vulnere adventu tineae
-inmensi `moveoque` pugnacem `legumque alas Capitolia obruit`; tanta adversa. Tua
+inmensi [`moveoque` pugnacem][B] `legumque alas Capitolia obruit`; tanta adversa. Tua
 **Iunonis** arsit mora matre adhuc, pendentia; ego pater fuisset omnes, nec
 prole prece prohibent arcus in. Toto Hesperium unam turba illic Echo; adit tua
 Parin est seduxit utque subiectum haec adolentur levabas, caede, tui.
 
 [Suos]: http://gestasset.com/rupit.aspx
 [Diris sibi]: http://locum.com/
+[A]: http://meos.conpendia.com/
+[B]: http://moveoque.com/pugnacem
 
 
 ## Pangrams
